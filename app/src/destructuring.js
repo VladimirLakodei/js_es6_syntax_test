@@ -12,7 +12,7 @@ let languages = ['JavaScript', 'PHP', 'Python', 'Ruby'];
 
 let [js, php, py, ru] = ['JavaScript', 'PHP', 'Python', 'Ruby'];
 
-console.log(js, php, py, ru);
+// console.log(js, php, py, ru);
 
 
 
@@ -26,7 +26,7 @@ let [low, mid, high, higher] = scores;
 
 // let [low, mid, high, higher = 10] = scores;
 
-console.log(low, mid, high, higher);
+// console.log(low, mid, high, higher);
 
 
 function computeScore([low, mid]) {
@@ -42,7 +42,7 @@ function getScores() {
 
 let scores2 = getScores();
 
-console.log(scores2);
+// console.log(scores2);
 
 
 
@@ -51,5 +51,34 @@ let no = 'No';
 
 [yes, no] = [no, yes];
 
-console.log('Yes is', yes);
-console.log('No is', no);
+// console.log('Yes is', yes);
+// console.log('No is', no);
+
+
+
+
+let user = {
+    firstname: 'John',
+    lastname: 'Doe',
+    social: {
+        vk: 'johndoe'
+    }
+};
+
+let { firstname, lastname } = user;
+let { firstname: first, lastname: last, age = 25, social: { vk } } = user;
+
+// let {firstname: first, lastname: last} = {firstname: 'John', lastname: 'Doe'};
+
+console.log(firstname, lastname);
+console.log(first, last, age, vk);
+
+
+function post(url, { data, cache }) {
+    // config.data;
+    // config.cache;
+
+    console.log(data, cache);
+}
+
+let result = post('api/users', { data: user, cache: false });
